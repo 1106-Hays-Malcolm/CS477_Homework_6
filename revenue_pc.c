@@ -1,3 +1,7 @@
+// Name: Malcolm Hays
+// Due Date: 04/23/2025
+// Assignment: Homework 6
+
 #include <stdio.h>
 #define DAYS 4
 #define FILE_NAME "revenue_pc_out.txt"
