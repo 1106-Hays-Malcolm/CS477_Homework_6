@@ -6,9 +6,11 @@
 #define FILE_NAME "revenue_pc_out.txt"
 
 int readFromFile(char* choiceArr, int* moneyArr, FILE* fp) {
-    
-    int m;
-    char endC;
+
+
+    char dummy[100];
+
+    fscanf(fp, "%s\n", dummy);
     
     char c, c2;
     int numChoices = 0;
