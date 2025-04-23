@@ -5,16 +5,19 @@
 #include <stdio.h>
 #define FILE_NAME "revenue_pc_out.txt"
 
-int readFromFile(char* choiceArr, int* moneyArr, FILE* fp) {
 
+// Read the choices from a file so we can reconstruct the solution
+int readFromFile(char* choiceArr, int* moneyArr, FILE* fp) {
 
     char dummy[100];
 
+    // Remove the first line of the file
     fscanf(fp, "%s\n", dummy);
     
     char c, c2;
     int numChoices = 0;
     fscanf(fp, "%c%c", &c, &c2);
+    // We keep reading from the file until we hit the end of the line
     for (; c != '\n'; fscanf(fp, "%c%c", &c, &c2)) {
         choiceArr[numChoices] = c;
         numChoices++;
