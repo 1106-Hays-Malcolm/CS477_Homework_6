@@ -13,7 +13,7 @@ int findMaximumRevenue(int* repairs, int* construction, int i, int days, int* ta
     int repairRevenue, constructionRevenue, constructionRevenueToday;
 
     // This is so we don't solve the same subproblem more than once
-    if (solvedSubproblems[a]) {
+    if (i <= days && solvedSubproblems[a]) {
         // printf("Day %d: already solved!\n", i);
         return table[a];
     }
