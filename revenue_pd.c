@@ -28,6 +28,7 @@ int readFromFile(char* choiceArr, int* moneyArr, FILE* fp) {
 
 int main() {
     FILE* fp = fopen(FILE_NAME, "r");
+    FILE* fout = fopen("revenue_pd_out.txt", "w");
 
     char choices[10];
     int money[10];
@@ -35,19 +36,20 @@ int main() {
 
     for (int i = 0; i < numChoices; i++) {
         int day = i + 1;
-        printf("Day %d: ", day);
+        fprintf(fout, "Day %d: ", day);
 
         if (choices[i] == 'n') {
-            printf("None");
+            fprintf(fout, "None");
         } else if (choices[i] == 'c') {
-            printf("Construction");
+            fprintf(fout, "Construction");
         } else if (choices[i] == 'r') {
-            printf("Repairs");
+            fprintf(fout, "Repairs");
         }
 
-        printf("\n");
+        fprintf(fout, "\n");
     }
 
     fclose(fp);
+    fclose(fout);
     return 0;
 }
